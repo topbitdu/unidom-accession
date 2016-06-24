@@ -25,8 +25,8 @@ class CreateUnidomPostFulfillments < ActiveRecord::Migration
 
     end
 
-    add_index :unidom_posts, :fulfilled_id
-    add_index :unidom_posts, :fulfiller_id
+    add_index :unidom_post_fulfillments, :fulfilled_id
+    add_index :unidom_post_fulfillments, :fulfiller_id
 
   end
 

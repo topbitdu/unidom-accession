@@ -24,5 +24,5 @@ The migration versions start with 200405.
 ## Call the Model
 ```ruby
 post_fulfillment = Unidom::Accession::PostFulfillment.valid_at.alive.first
-Unidom::Accession::PostFulfillment.fulfill! fulfiller, post
+Unidom::Accession::PostFulfillment.fulfill! fulfiller: fulfiller, fulfilled: post, opened_at: Time.now
 ```

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unidom-accession (0.1)
+    unidom-accession (1.0)
       unidom-common (~> 0.9)
 
 GEM

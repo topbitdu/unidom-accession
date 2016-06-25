@@ -12,7 +12,10 @@ class Unidom::Accession::PostFulfillment < ActiveRecord::Base
   scope :fulfilled_by, ->(fulfiller) { where fulfiller: fulfiller }
   scope :fulfilled_is, ->(fulfilled) { where fulfilled: fulfilled }
 
-  def self.fulfill!(fulfiller, fulfilled, opened_at = Time.now)
+  def self.fulfill!(fulfilled: nil, fulfiller: nil, opened_at: Time.now)
+    raise ArgumentError.new('Argument fulfilled is required.') if fulfilled.blank?
+    raise ArgumentError.new('Argument fulfiller is required.') if fulfiller.blank?
+    raise ArgumentError.new('Argument opened_at is required.') if opened_at.blank?
     self.create! fulfiller: fulfiller, fulfilled: fulfilled, opened_at: opened_at
   end
 

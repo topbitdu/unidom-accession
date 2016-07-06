@@ -5,3 +5,6 @@
 
 ## v1.0
 1. Improve the models to support the Keyword Arguments
+
+## v1.1
+1. HasPostFulfillment concern

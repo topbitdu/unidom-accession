@@ -7,4 +7,5 @@
 1. Improve the models to support the Keyword Arguments
 
 ## v1.1
-1. HasPostFulfillment concern
+1. As Post Fulfilled concern
+2. As Post Fulfiller concern

@@ -29,3 +29,9 @@ post_fulfillment = Unidom::Accession::PostFulfillment.fulfill! fulfiller: fulfil
 # or like the following source codes, which opened_at is optional
 post_fulfillment = Unidom::Accession::PostFulfillment.fulfill! fulfiller: fulfiller, fulfilled: post
 ```
+
+## Include the Concern
+```ruby
+include Unidom::Accession::Concerns::AsPostFulfilled
+include Unidom::Accession::Concerns::AsPostFulfiller
+```

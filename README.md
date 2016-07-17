@@ -35,3 +35,13 @@ post_fulfillment = Unidom::Accession::PostFulfillment.fulfill! fulfiller: fulfil
 include Unidom::Accession::Concerns::AsPostFulfilled
 include Unidom::Accession::Concerns::AsPostFulfiller
 ```
+
+### As Post Fulfilled concern
+The As Post Fulfilled concern do the following tasks for the includer automatically:
+1. Define the has_many :post_fulfillments macro as: ``has_many :post_fulfillments, class_name: 'Unidom::Accession::PostFulfillment', as: :fulfilled``
+2. Define the has_many :fulfiller_people macro as: ``has_many :fulfiller_people, through: :post_fulfillments, source: :fulfiller, source_type: 'Unidom::Party::Person'``
+
+### As Post Fulfiller concern
+The As Post Fulfiller concern do the following tasks for the includer automatically:
+1. Define the has_many :post_fulfillments macro as: ``has_many :post_fulfillments, class_name: 'Unidom::Accession::PostFulfillment', as: :fulfiller``
+2. Define the has_many :fulfilled_posts macro as: ``has_many :fulfilled_posts, through: :post_fulfillments, source: :fulfilled, source_type: 'Unidom::Position::Post'``

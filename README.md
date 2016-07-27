@@ -37,11 +37,13 @@ include Unidom::Accession::Concerns::AsPostFulfiller
 ```
 
 ### As Post Fulfilled concern
-The As Post Fulfilled concern do the following tasks for the includer automatically:
-1. Define the has_many :post_fulfillments macro as: ``has_many :post_fulfillments, class_name: 'Unidom::Accession::PostFulfillment', as: :fulfilled``
-2. Define the has_many :fulfiller_people macro as: ``has_many :fulfiller_people, through: :post_fulfillments, source: :fulfiller, source_type: 'Unidom::Party::Person'``
+The As Post Fulfilled concern do the following tasks for the includer automatically:  
+1. Define the has_many :post_fulfillments macro as: ``has_many :post_fulfillments, class_name: 'Unidom::Accession::PostFulfillment', as: :fulfilled``  
+2. Define the has_many :fulfiller_people macro as: ``has_many :fulfiller_people, through: :post_fulfillments, source: :fulfiller, source_type: 'Unidom::Party::Person'``  
+3. Define the #is_fulfilled_as_post! method as: ``def is_fulfilled_as_post!(by: fulfiller, opened_at: Time.now)``
 
 ### As Post Fulfiller concern
-The As Post Fulfiller concern do the following tasks for the includer automatically:
-1. Define the has_many :post_fulfillments macro as: ``has_many :post_fulfillments, class_name: 'Unidom::Accession::PostFulfillment', as: :fulfiller``
-2. Define the has_many :fulfilled_posts macro as: ``has_many :fulfilled_posts, through: :post_fulfillments, source: :fulfilled, source_type: 'Unidom::Position::Post'``
+The As Post Fulfiller concern do the following tasks for the includer automatically:  
+1. Define the has_many :post_fulfillments macro as: ``has_many :post_fulfillments, class_name: 'Unidom::Accession::PostFulfillment', as: :fulfiller``  
+2. Define the has_many :fulfilled_posts macro as: ``has_many :fulfilled_posts, through: :post_fulfillments, source: :fulfilled, source_type: 'Unidom::Position::Post'``  
+3. 

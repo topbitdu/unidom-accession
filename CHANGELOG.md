@@ -20,3 +20,7 @@
 
 ## v1.3.1
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
+
+## v2.0
+1. Improved the As Post Fulfilled concern for the #is_fulfilled_as_post! method
+2. Improved the As Post Fulfiller concern for the #fulfill_post! method

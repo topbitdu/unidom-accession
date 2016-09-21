@@ -28,3 +28,11 @@
 ## v2.1
 1. Improve the As Post Fulfilled concern to add the #is_fulfilled_as_post? method
 2. Improve the As Post Fulfiller concern to add the #fulfill_post? method
+
+## v2.2
+1. Improve the Post Fulfillment model to add the .part_time scope & the .temporary scope
+
+## v2.3
+1. Improve the As Post Fulfilled concern for the #is_fulfilled_as_post! method to support the NoSQL columns
+2. Improve the As Post Fulfiller concern for the #fulfill_post! method to support the NoSQL columns
+3. Improve the Post Fulfillment model for the .fulfill! method to support the NoSQL columns

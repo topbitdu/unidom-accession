@@ -28,6 +28,9 @@ post_fulfillment = Unidom::Accession::PostFulfillment.valid_at.alive.first
 post_fulfillment = Unidom::Accession::PostFulfillment.fulfill! fulfiller: fulfiller, fulfilled: post, opened_at: Time.now
 # or like the following source codes, which opened_at is optional
 post_fulfillment = Unidom::Accession::PostFulfillment.fulfill! fulfiller: fulfiller, fulfilled: post
+
+part_time_fulfillments = Unidom::Accession::PostFulfillment.part_time.temporary(false) # all part time & permanent post fulfillments
+temporary_fulfillments = Unidom::Accession::PostFulfillment.part_time(false).temporary # all full time & temporary post fulfillments
 ```
 
 ## Include the Concern

@@ -28,3 +28,6 @@
 ## v2.1
 1. Improved the As Post Fulfilled concern to add the #is_fulfilled_as_post? method
 2. Improved the As Post Fulfiller concern to add the #fulfill_post? method
+
+## v2.2
+1. Improved the Post Fulfillment model to add the .part_time scope & the .temporary scope

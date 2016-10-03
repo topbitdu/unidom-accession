@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
 [![Gem Version](https://badge.fury.io/rb/unidom-accession.svg)](https://badge.fury.io/rb/unidom-accession)
+[![Dependency Status](https://gemnasium.com/badges/github.com/topbitdu/unidom-accession.svg)](https://gemnasium.com/github.com/topbitdu/unidom-accession)
 
 Unidom (UNIfied Domain Object Model) is a series of domain model engines. The Accession domain model engine includes Post Fullfillment and its relative models.
 Unidom (统一领域对象模型)是一系列的领域模型引擎。就职领域模型引擎包括岗位履行及其相关的模型。

@@ -21,4 +21,7 @@ module Unidom::Accession::Concerns::AsPostFulfiller
 
   end
 
+  module ClassMethods
+  end
+
 end

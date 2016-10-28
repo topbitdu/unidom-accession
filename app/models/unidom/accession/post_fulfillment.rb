@@ -1,6 +1,6 @@
 # Post Fulfillment 是岗位履行。
 
-class Unidom::Accession::PostFulfillment < ActiveRecord::Base
+class Unidom::Accession::PostFulfillment < Unidom::Accession::ApplicationRecord
 
   self.table_name = 'unidom_post_fulfillments'
 

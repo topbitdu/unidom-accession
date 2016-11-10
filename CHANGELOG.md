@@ -33,7 +33,7 @@
 1. Improved the Post Fulfillment model to add the .part_time scope & the .temporary scope
 
 ## v2.2.1
-1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.6
+1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.6
 
 ## v2.2.2
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.7

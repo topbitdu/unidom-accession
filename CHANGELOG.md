@@ -11,7 +11,7 @@
 2. As Post Fulfiller concern
 
 ## v1.2
-1. Improved the As Post Fulfilled concern to add the has_many #post_fulfillments macro
+1. Improved the As Post Fulfilled concern to add the ``has_many :post_fulfillments`` macro
 2. Improved the As Post Fulfilled concern to add the has_many #fulfilled_posts macro
 
 ## v1.3

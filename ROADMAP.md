@@ -38,6 +38,9 @@
 ## v2.2.2
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.7
 
+## v2.2.3
+1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.7.1
+
 ## v2.3
 1. Improve the As Post Fulfilled concern for the #is_fulfilled_as_post! method to support the NoSQL columns
 2. Improve the As Post Fulfiller concern for the #fulfill_post! method to support the NoSQL columns

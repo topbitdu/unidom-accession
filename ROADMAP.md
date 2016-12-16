@@ -15,7 +15,7 @@
 2. Improve the As Post Fulfilled concern to add the ``has_many :fulfilled_posts`` macro
 
 ## v1.3
-1. Improve the As Post Fulfilled concern to add the #is_fulfilled_as_post! method
+1. Improve the As Post Fulfilled concern to add the #``is_fulfilled_as_post!`` method
 2. Improve the As Post Fulfiller concern to add the #fulfill_post! method
 
 ## v1.3.1

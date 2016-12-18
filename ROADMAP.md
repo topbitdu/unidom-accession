@@ -16,7 +16,7 @@
 
 ## v1.3
 1. Improve the As Post Fulfilled concern to add the #``is_fulfilled_as_post!`` method
-2. Improve the As Post Fulfiller concern to add the #fulfill_post! method
+2. Improve the As Post Fulfiller concern to add the #``fulfill_post!`` method
 
 ## v1.3.1
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0

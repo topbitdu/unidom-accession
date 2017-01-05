@@ -1,3 +1,4 @@
+##
 # Post Fulfillment 是岗位履行。
 
 class Unidom::Accession::PostFulfillment < Unidom::Accession::ApplicationRecord

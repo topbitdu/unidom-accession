@@ -23,4 +23,4 @@ class Unidom::Accession::PostFulfillment < Unidom::Accession::ApplicationRecord
     self.create! fulfiller: fulfiller, fulfilled: fulfilled, opened_at: opened_at
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Accession::PostFulfillment'

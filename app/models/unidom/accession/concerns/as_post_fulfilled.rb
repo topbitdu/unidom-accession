@@ -1,3 +1,6 @@
+##
+# As Post Fulfilled 是被履行的职位的领域逻辑关注点。
+
 module Unidom::Accession::Concerns::AsPostFulfilled
 
   extend ActiveSupport::Concern

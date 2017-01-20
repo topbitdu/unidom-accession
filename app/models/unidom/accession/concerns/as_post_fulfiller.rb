@@ -1,3 +1,6 @@
+##
+# As Post Fulfiller 是履行职位的参与者的领域逻辑关注点。
+
 module Unidom::Accession::Concerns::AsPostFulfiller
 
   extend ActiveSupport::Concern

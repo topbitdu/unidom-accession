@@ -80,3 +80,19 @@ The As Post Fulfiller concern do the following tasks for the includer automatica
 3. Define the #fulfill_post! method as: ``def fulfill_post!(post, at: Time.now)``
 
 4. Define the #fulfill_post? method as: ``def fulfill_post?(post, at: Time.now)``
+
+
+
+## Disable the Model & Migration
+
+If you only need the app components other than models, the migrations should be neglected, and the models should not be loaded.
+```ruby
+# config/initializers/unidom.rb
+Unidom::Common.configure do |options|
+
+  options[:neglected_namespaces] = %w{
+    Unidom::Accession
+  }
+
+end
+```

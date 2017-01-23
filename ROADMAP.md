@@ -50,6 +50,11 @@
 2. Improve the models to support the namespace neglecting
 
 ## v2.3
+1. Models RSpec examples manifest
+2. Types RSpec examples manifest
+3. Validators RSpec examples manifest
+
+## v2.4
 1. Improve the As Post Fulfilled concern for the #is_fulfilled_as_post! method to support the NoSQL columns
 2. Improve the As Post Fulfiller concern for the #fulfill_post! method to support the NoSQL columns
 3. Improve the Post Fulfillment model for the .fulfill! method to support the NoSQL columns

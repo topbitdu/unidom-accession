@@ -11,7 +11,10 @@ module Unidom::Accession::Concerns::AsPostFulfiller
     has_many :fulfilled_posts,   through:    :post_fulfillments,                   source: :fulfilled, source_type: 'Unidom::Position::Post'
 
     ##
-    # 让当前参与者在指定时间 at 开始履行岗位 post 。指定时间缺省为当前时间。
+    # 让当前参与者在指定时间 at 开始履行岗位 post 。指定时间缺省为当前时间。如：
+    # selected_person.fulfill_post! post
+    # 或者
+    # selected_person.fulfill_post! post, at: Time.now-1.day
     def fulfill_post!(post, at: Time.now)
       raise ArgumentError.new('The post argument is required.') if post.blank?
       raise ArgumentError.new('The at argument is required.'  ) if at.blank?

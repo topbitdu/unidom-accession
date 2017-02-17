@@ -21,6 +21,11 @@ module Unidom::Accession::Concerns::AsPostFulfilled
       post_fulfillments.create! fulfiller: by, opened_at: at
     end
 
+    ##
+    # 判断当前岗位在指定时间 at 是否被指定的参与者 by 履行。指定时间缺省为当前时间。如：
+    # post.is_fulfilled_as_post? by: tom
+    # 或者
+    # post.is_fulfilled_as_post? by: tom, at: Time.now
     def is_fulfilled_as_post?(by: nil, at: Time.now)
       raise ArgumentError.new('The by argument is required.') if by.blank?
       raise ArgumentError.new('The at argument is required.') if at.blank?

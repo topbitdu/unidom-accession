@@ -54,6 +54,9 @@
 2. Types RSpec examples manifest
 3. Validators RSpec examples manifest
 
+## v2.3.1
+1. Improve the Post Fulfillment spec for the part_time scope, & the temporary scope
+
 ## v2.4
 1. Improve the As Post Fulfilled concern for the #is_fulfilled_as_post! method to support the NoSQL columns
 2. Improve the As Post Fulfiller concern for the #fulfill_post! method to support the NoSQL columns

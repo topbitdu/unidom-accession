@@ -53,3 +53,6 @@
 1. Models RSpec examples manifest
 2. Types RSpec examples manifest
 3. Validators RSpec examples manifest
+
+## v2.3.1
+1. Improve the Post Fulfillment spec for the part_time scope, & the temporary scope

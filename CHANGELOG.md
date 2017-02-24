@@ -55,4 +55,4 @@
 3. Validators RSpec examples manifest
 
 ## v2.3.1
-1. Improve the Post Fulfillment spec for the part_time scope, & the temporary scope
+1. Improved the Post Fulfillment spec for the part_time scope, & the temporary scope

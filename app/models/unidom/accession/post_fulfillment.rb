@@ -20,7 +20,8 @@ class Unidom::Accession::PostFulfillment < Unidom::Accession::ApplicationRecord
   # 将工作岗位 fulfilled 和履行者 fulfiller 在给定的时间 opened_at 关联起来。 opened_at 缺省为当前时间。如：
   # Unidom::Accession::PostFulfillment.fulfill! fulfilled: post, fulfiller: selected_person
   def self.fulfill!(fulfilled: nil, fulfiller: nil, opened_at: Time.now)
-    raise ArgumentError.new('Argument fulfilled is required.') if fulfilled.blank?
+    assert_present! :fulfilled, fulfilled
+    #raise ArgumentError.new('Argument fulfilled is required.') if fulfilled.blank?
     raise ArgumentError.new('Argument fulfiller is required.') if fulfiller.blank?
     raise ArgumentError.new('Argument opened_at is required.') if opened_at.blank?
     self.create! fulfiller: fulfiller, fulfilled: fulfilled, opened_at: opened_at

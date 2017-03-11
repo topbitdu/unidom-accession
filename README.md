@@ -101,6 +101,8 @@ end
 
 ## RSpec examples
 
+### RSpec example manifest (run automatically)
+
 ```ruby
 # spec/models/unidom_spec.rb
 require 'unidom/accession/models_rspec'
@@ -110,4 +112,53 @@ require 'unidom/accession/types_rspec'
 
 # spec/validators/unidom_spec.rb
 require 'unidom/accession/validators_rspec'
+```
+
+### RSpec shared examples (to be integrated)
+
+```ruby
+# lib/unidom.rb
+def initialize_unidom
+
+  Unidom::Party::Person.class_eval do
+    include Unidom::Accession::Concerns::AsPostFulfiller
+  end
+
+  Unidom::Position::Post.class_eval do
+    include Unidom::Accession::Concerns::AsPostFulfilled
+  end
+
+end
+
+# spec/rails_helper.rb
+require 'unidom'
+initialize_unidom
+
+# spec/support/unidom_rspec_shared_examples.rb
+require 'unidom/accession/rspec_shared_examples'
+
+# spec/models/unidom/party/person_spec.rb
+describe Unidom::Party::Person do
+
+  model_attribtues = {
+    name: 'Tim'
+  }
+
+  it_behaves_like 'Unidom::Accession::Concerns::AsPostFulfiller', model_attribtues
+
+end
+
+# spec/models/unidom/position/post_spec.rb
+describe Unidom::Position::Post do
+
+  model_attribtues = {
+    name:              'HR Manager',
+    organization_id:   SecureRandom.uuid,
+    organization_type: 'Unidom::Position::Organization::Mock',
+    position_id:       SecureRandom.uuid
+  }
+
+  it_behaves_like 'Unidom::Accession::Concerns::AsPostFulfilled', model_attribtues
+
+end
 ```

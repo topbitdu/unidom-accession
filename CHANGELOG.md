@@ -56,3 +56,8 @@
 
 ## v2.3.1
 1. Improved the Post Fulfillment spec for the ``part_time`` scope, & the ``temporary`` scope
+
+## v2.3.2
+1. As Post Fulfilled shared examples
+2. As Post Fulfiller shared examples
+3. RSpec shared examples manifest

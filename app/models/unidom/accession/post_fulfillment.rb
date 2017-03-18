@@ -23,9 +23,7 @@ class Unidom::Accession::PostFulfillment < Unidom::Accession::ApplicationRecord
     assert_present! :fulfilled, fulfilled
     assert_present! :fulfiller, fulfiller
     assert_present! :opened_at, opened_at
-    #raise ArgumentError.new('Argument fulfilled is required.') if fulfilled.blank?
-    #raise ArgumentError.new('Argument fulfiller is required.') if fulfiller.blank?
-    #raise ArgumentError.new('Argument opened_at is required.') if opened_at.blank?
+
     self.create! fulfiller: fulfiller, fulfilled: fulfilled, opened_at: opened_at
   end
 

@@ -158,7 +158,9 @@ describe Unidom::Position::Post do
     position_id:       SecureRandom.uuid
   }
 
-  it_behaves_like 'Unidom::Accession::Concerns::AsPostFulfilled', model_attribtues
+  post_fulfiller = Unidom::Party::Person.create! name: 'Tim'
+
+  it_behaves_like 'Unidom::Accession::Concerns::AsPostFulfilled', model_attribtues, post_fulfiller
 
 end
 ```

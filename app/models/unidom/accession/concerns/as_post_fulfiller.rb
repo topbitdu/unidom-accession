@@ -3,7 +3,8 @@
 
 module Unidom::Accession::Concerns::AsPostFulfiller
 
-  extend ActiveSupport::Concern
+  extend  ActiveSupport::Concern
+  include Unidom::Common::Concerns::ArgumentValidation
 
   included do |includer|
 
@@ -16,9 +17,12 @@ module Unidom::Accession::Concerns::AsPostFulfiller
     # 或者
     # selected_person.fulfill_post! post, at: Time.now-1.day
     def fulfill_post!(post, at: Time.now)
-      raise ArgumentError.new('The post argument is required.') if post.blank?
-      raise ArgumentError.new('The at argument is required.'  ) if at.blank?
+
+      assert_present! :post, post
+      assert_present! :at,   at
+
       post_fulfillments.create! fulfilled: post, opened_at: at
+
     end
 
     ##
@@ -27,9 +31,12 @@ module Unidom::Accession::Concerns::AsPostFulfiller
     # 或者
     # post.fulfill_post? post, at: Time.now
     def fulfill_post?(post, at: Time.now)
-      raise ArgumentError.new('The post argument is required.') if post.blank?
-      raise ArgumentError.new('The at argument is required.'  ) if at.blank?
+
+      assert_present! :post, post
+      assert_present! :at,   at
+
       post_fulfillments.fulfilled_is(post).valid_at(now: at).exists?
+
     end
 
   end

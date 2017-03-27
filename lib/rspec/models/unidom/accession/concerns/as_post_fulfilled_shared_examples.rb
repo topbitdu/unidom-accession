@@ -1,30 +1,13 @@
 shared_examples 'Unidom::Accession::Concerns::AsPostFulfilled' do |model_attributes, post_fulfiller|
 
   before :each do
-
     @post = described_class.create! model_attributes
-
   end
 
-  after :all do
-
-    #@post.destroy
-
+  after :each do
   end
-
-=begin
-  context do
-
-    post = described_class.create! model_attributes
-    it_behaves_like 'assert_present!', post, :is_fulfilled_as_post!, { by: post_fulfiller, at: Time.now }, [ :by, :at ]
-
-  end
-=end
 
   context '#is_fulfilled_as_post!' do
-
-    it 'should reject the by argument = nil' do expect { @post.is_fulfilled_as_post! by: nil,            at: Time.now }.to raise_error(ArgumentError, 'The by argument is required.') end
-    it 'should reject the at argument = nil' do expect { @post.is_fulfilled_as_post! by: post_fulfiller, at: nil      }.to raise_error(ArgumentError, 'The at argument is required.') end
 
     it "should be able to be fulfilled as post by #{post_fulfiller.inspect}" do
       post_fulfillment = @post.is_fulfilled_as_post! by: post_fulfiller
@@ -43,9 +26,6 @@ shared_examples 'Unidom::Accession::Concerns::AsPostFulfilled' do |model_attribu
   end
 
   context '#is_fulfilled_as_post?' do
-
-    it 'should reject the by argument = nil' do expect { @post.is_fulfilled_as_post? by: nil,            at: Time.now }.to raise_error(ArgumentError, 'The by argument is required.') end
-    it 'should reject the at argument = nil' do expect { @post.is_fulfilled_as_post? by: post_fulfiller, at: nil      }.to raise_error(ArgumentError, 'The at argument is required.') end
 
     it "should be able to be fulfilled as post by #{post_fulfiller.inspect}" do
       expect(@post.is_fulfilled_as_post? by: post_fulfiller).to be_falsey
@@ -74,6 +54,10 @@ shared_examples 'Unidom::Accession::Concerns::AsPostFulfilled' do |model_attribu
       }
 
     it_behaves_like 'has_many', model_attributes, :post_fulfillments, Unidom::Accession::PostFulfillment, [ post_fulfillment_1_attribtues, post_fulfillment_2_attribtues ]
+
+    post = described_class.create! model_attributes
+    it_behaves_like 'assert_present!', post, :is_fulfilled_as_post!, [ { by: post_fulfiller, at: Time.now } ], [ :by, :at ]
+    it_behaves_like 'assert_present!', post, :is_fulfilled_as_post?, [ { by: post_fulfiller, at: Time.now } ], [ :by, :at ]
 
   end
 

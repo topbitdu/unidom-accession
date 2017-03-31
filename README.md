@@ -144,7 +144,15 @@ describe Unidom::Party::Person do
     name: 'Tim'
   }
 
-  it_behaves_like 'Unidom::Accession::Concerns::AsPostFulfiller', model_attribtues
+  post_attribtues = {
+    name:              'HR Manager',
+    organization_id:   SecureRandom.uuid,
+    organization_type: 'Unidom::Position::Organization::Mock',
+    position_id:       SecureRandom.uuid
+  }
+  post = Unidom::Position::Post.create! post_attributes
+
+  it_behaves_like 'Unidom::Accession::Concerns::AsPostFulfiller', model_attribtues, post
 
 end
 

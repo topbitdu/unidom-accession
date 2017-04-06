@@ -71,6 +71,9 @@
 2. Improve the As Post Fulfiller shared examples for the #fulfill_post! method, & the #fulfill_post? method
 3. Improve the As Post Fulfilled shared examples for the #is_fulfilled_as_post! method, & the #is_fulfilled_as_post? method
 
+## v2.3.5
+1. Post Fulfillment shared examples
+
 ## v2.4
 1. Improve the As Post Fulfilled concern for the #is_fulfilled_as_post! method to support the NoSQL columns
 2. Improve the As Post Fulfiller concern for the #fulfill_post! method to support the NoSQL columns

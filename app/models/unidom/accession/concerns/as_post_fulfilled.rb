@@ -17,11 +17,12 @@ module Unidom::Accession::Concerns::AsPostFulfilled
     # 或者
     # post.is_fulfilled_as_post! by: tom, at: Time.now
     def is_fulfilled_as_post!(by: nil, at: Time.now)
+
       assert_present! :by, by
       assert_present! :at, at
-      #raise ArgumentError.new('The by argument is required.') if by.blank?
-      #raise ArgumentError.new('The at argument is required.') if at.blank?
+
       post_fulfillments.create! fulfiller: by, opened_at: at
+
     end
 
     ##
@@ -30,11 +31,12 @@ module Unidom::Accession::Concerns::AsPostFulfilled
     # 或者
     # post.is_fulfilled_as_post? by: tom, at: Time.now
     def is_fulfilled_as_post?(by: nil, at: Time.now)
+
       assert_present! :by, by
       assert_present! :at, at
-      #raise ArgumentError.new('The by argument is required.') if by.blank?
-      #raise ArgumentError.new('The at argument is required.') if at.blank?
+
       post_fulfillments.fulfilled_by(by).valid_at(now: at).exists?
+
     end
 
   end

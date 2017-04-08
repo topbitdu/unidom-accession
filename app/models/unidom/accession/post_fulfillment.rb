@@ -20,11 +20,13 @@ class Unidom::Accession::PostFulfillment < Unidom::Accession::ApplicationRecord
   # 将工作岗位 fulfilled 和履行者 fulfiller 在给定的时间 opened_at 关联起来。 opened_at 缺省为当前时间。如：
   # Unidom::Accession::PostFulfillment.fulfill! fulfilled: post, fulfiller: selected_person
   def self.fulfill!(fulfilled: nil, fulfiller: nil, opened_at: Time.now)
+
     assert_present! :fulfilled, fulfilled
     assert_present! :fulfiller, fulfiller
     assert_present! :opened_at, opened_at
 
-    self.create! fulfiller: fulfiller, fulfilled: fulfilled, opened_at: opened_at
+    create! fulfiller: fulfiller, fulfilled: fulfilled, opened_at: opened_at
+
   end
 
 end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Accession::PostFulfillment'

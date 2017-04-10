@@ -73,6 +73,7 @@
 
 ## v2.3.5
 1. Post Fulfillment shared examples
+2. Improve the RSpec shared examples manifest to require the Post Fulfillment shared examples
 
 ## v2.4
 1. Improve the As Post Fulfilled concern for the #is_fulfilled_as_post! method to support the NoSQL columns

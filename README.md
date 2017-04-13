@@ -137,6 +137,30 @@ initialize_unidom
 # spec/support/unidom_rspec_shared_examples.rb
 require 'unidom/accession/rspec_shared_examples'
 
+# spec/models/unidom/accession/post_fulfillment_spec.rb
+describe Unidom::Accession::PostFulfillment, type: :model do
+
+  before :each do
+  end
+
+  after :each do
+  end
+
+  context do
+
+    model_attributes = {}
+
+    post_fulfiller = Unidom::Party::Person.create!  name: 'Tim'
+    company        = Unidom::Party::Company.create! name: 'Space X'
+    occupation     = Unidom::Position::Occupation.first_or_create! scheme_id: SecureRandom.uuid, scheme_type: 'Unidom::Accession::Scheme::Mock', code: 'OC-00', name: 'Some Occupation'
+    position       = occupation.positions.first_or_create! organization: company, name: occupation.name
+    post_fulfilled = position.posts.first_or_create!       organization: company, name: position.name
+
+    it_behaves_like 'Unidom::Accession::PostFulfillment', model_attributes, post_fulfilled, post_fulfiller
+  end
+
+end
+
 # spec/models/unidom/party/person_spec.rb
 describe Unidom::Party::Person do
 

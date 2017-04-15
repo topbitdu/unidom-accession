@@ -68,8 +68,8 @@
 
 ## v2.3.4
 1. Improved the As Post Fulfilled concern for the argument validation
-2. Improve the As Post Fulfiller shared examples for the #fulfill_post! method, & the #fulfill_post? method
-3. Improve the As Post Fulfilled shared examples for the #is_fulfilled_as_post! method, & the #is_fulfilled_as_post? method
+2. Improved the As Post Fulfiller shared examples for the #fulfill_post! method, & the #fulfill_post? method
+3. Improved the As Post Fulfilled shared examples for the #is_fulfilled_as_post! method, & the #is_fulfilled_as_post? method
 
 ## v2.3.5
 1. Post Fulfillment shared examples

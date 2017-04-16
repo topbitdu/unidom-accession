@@ -73,4 +73,4 @@
 
 ## v2.3.5
 1. Post Fulfillment shared examples
-2. Improve the RSpec shared examples manifest to require the Post Fulfillment shared examples
+2. Improved the RSpec shared examples manifest to require the Post Fulfillment shared examples

@@ -74,3 +74,7 @@
 ## v2.3.5
 1. Post Fulfillment shared examples
 2. Improved the RSpec shared examples manifest to require the Post Fulfillment shared examples
+
+## v2.3.6
+1. Improve the Ruby Gem Specification to depend on unidom-common v1.10
+2. Improve the Post Fulfillment migration for the #opened_at column, & the #closed_at column

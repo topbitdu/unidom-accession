@@ -79,6 +79,10 @@
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.10
 2. Improve the Post Fulfillment migration for the #``opened_at`` column, & the #closed_at column
 
+## v2.3.7
+1. Improve the Ruby Gem Specification to depend on unidom-common v1.11
+2. Improve the Post Fulfillment migration for the #state column
+
 ## v2.4
 1. Improve the As Post Fulfilled concern for the #is_fulfilled_as_post! method to support the NoSQL columns
 2. Improve the As Post Fulfiller concern for the #fulfill_post! method to support the NoSQL columns
